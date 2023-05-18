@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords"
+    content="3D Shape Understanding, Open-World Understanding, Zero-Shot 3D Classification, Vision Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenShape: Scaling Up 3D Shape Representation Towards Open-World Understanding</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container ">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">OpenShape: Scaling Up 3D Shape Representation Towards Open-World
+              Understanding</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://cseweb.ucsd.edu/~mil070/">Minghua Liu</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Z7zLvdkAAAAJ&hl=en">Ruoxi
+                  Shi</a><sup>2*</sup>,</span>
+              <span class="author-block">
+                <a href="https://kaimingkuang.github.io">Kaiming Kuang</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://yinhaoz.github.io">Yinhao Zhu</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://xuanlinli17.github.io">Xuanlin Li</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Nlbo2H8AAAAJ&hl=en">Shizhong
+                  Han</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://herbertcai.github.io">Hong Cai</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.porikli.com">Fatih Porikli</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://cseweb.ucsd.edu//~haosu/">Hao Su</a><sup>1</sup>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of California San Diego</span>
+              <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>
+              <span class="author-block"><sup>3</sup>Qualcomm</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Colin97/OpenShape_code"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container ">
+      <div class="hero-body">
+        <img src="./static/images/teaser.pdf" class="teaser-image" alt="teaser image." />
+
+        <h2 class="subtitle">
+          <b>Left</b>: Zero-shot 3D shape classification on the Objaverse-LVIS (1,156 categories) and ModelNet40
+          datasets (40 common categories). <b>Right</b>: Our shape representations encode a broad range of semantic and
+          visual concepts. We input two 3D shapes and use their shape embeddings to retrieve the top three shapes whose
+          embeddings are simultaneously closest to both inputs.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce OpenShape, a method for learning multi-modal joint representations of text, image, and point
+              clouds. We adopt the commonly used multi-modal contrastive learning framework for representation
+              alignment, but with a specific focus on scaling up 3D representations to enable open-world 3D shape
+              understanding. To achieve this, we scale up training data by ensembling multiple 3D datasets and propose
+              several strategies to automatically filter and enrich noisy text descriptions. We also explore and compare
+              strategies for scaling 3D backbone networks and introduce a novel hard negative mining module for more
+              efficient training. We evaluate OpenShape on zero-shot 3D classification benchmarks and demonstrate its
+              superior capabilities for open-world recognition. Specifically, OpenShape achieves a zero-shot accuracy of
+              46.8% on the 1,156-category Objaverse-LVIS benchmark, compared to less than 10% for existing methods.
+              OpenShape also achieves an accuracy of 85.3% on ModelNet40, outperforming previous zero-shot baseline
+              methods by 20% and performing on par with some fully-supervised methods. Furthermore, we show that our
+              learned embeddings encode a wide range of visual and semantic concepts (e.g., subcategories, color, shape,
+              style) and facilitate fine-grained text-3D and image-3D interactions. Due to their alignment with CLIP
+              embeddings, our learned shape representations can also be integrated with off-the-shelf CLIP-based models
+              for various applications, such as point cloud captioning and point cloud-conditioned image generation.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Zero-Shot 3D Shape Classification</h2>
+
+      <div class="content has-text-justified">
+        <img src="./static/images/zeroshot_classification.png" class="comparison-image" alt="comparison image." />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Multi-Modal 3D Shape Retrieval</h2>
+
+      <div class="content has-text-justified">
+        <img src="./static/images/image_pc_retrieval.pdf"/>
+      </div>
+      3D shape retrieval from <b>image</b> (left, mid) and <b>point cloud</b> (right).
+      <div class="content has-text-justified">
+        <img src="./static/images/finegrained.pdf"/>
+      </div>
+      <div class="content has-text-justified">
+        <img src="./static/images/text_retrieval_mug.pdf"/>
+      </div>
+      <b>Text-input 3D shape retrieval.</b> In each row, we show input texts on the left and two retrieved shapes for
+      each text on the right. OpenShape embedding encodes a wide range of visual and semantic concepts and enables (a)
+      retrieval of fine-grained subcategories (first two rows), and (b) control of attributes (e.g., color, shape,
+      style) and their combinations (last two rows).
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Shape-Conditioned Multimodal Generation</h2>
+
+      <div class="content has-text-justified">
+        <img src="./static/images/capnsd.pdf"/>
+      </div>
+      (a) <b>Point cloud captioning. </b> (b) <b> Point cloud-conditioned image generation. </b> Our learned 3D shape
+      embeddings can be integrated with off-the-shelf pretrained CLIP-based models (e.g., captioning and image
+      generation models) to support various cross-modal applications.
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code> @article{liu2023openshape,
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/Colin97/OpenShape_code" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
